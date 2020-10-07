@@ -66,8 +66,10 @@ h1{
 .flipped .card_face{
     display: none;
 }
-.timer{
+#timer{
     text-align: center;
+    font-size: 35px;
+    padding-top: 30px;
 }
 .match{
     background-color: #5AD66F;

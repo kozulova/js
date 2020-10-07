@@ -8,18 +8,19 @@ game.play();
 document.addEventListener("DOMContentLoaded", load);
 
 class Game{
+
     constructor(cards){
         this.cards = cards.concat(cards);
     }
 
     matchCards = [];
+    gameStart = 0;
 
     play(){
         this.showCards();
         this.handleClick();
-        //this.setTimer();
-       // this.checkWin();
     }
+
 
     showCards(){
         this.matchCards = [];
@@ -33,17 +34,24 @@ class Game{
     }
 
     setTimer(){
-        let timer = document.getElementById("timer");
+        let self = this;
+        let timerInterval = null;
+        timer.innerHTML="";
         let secs = 60;
         timer.innerHTML +=secs;
-        let timerInterval = setInterval(addTimer, 1000);
-        let self = this;
+        timerInterval = setInterval(addTimer, 1000);
+
         function addTimer(){
             secs = secs - 1;
             timer.innerHTML = secs;
             if(secs===0){
                 clearInterval(timerInterval);
                 self.openModal("Loose");
+                self.playAgain();
+            }
+            else if(self.checkWin()){
+                clearInterval(timerInterval);
+                self.openModal("win");
                 self.playAgain();
             }
         }
@@ -62,16 +70,17 @@ class Game{
 
     checkWin(){
         if(this.matchCards.length === this.cards.length/2){
-            this.openModal("win");
-            this.playAgain();
+            return true;
         }
+        else {
+          return  false};
     }
 
     playAgain(){
         let self = this;
         let playAgainButton = document.querySelector(".playAgain");
         playAgainButton.addEventListener("click", function(){
-
+            self.gameStart = 0;
             self.play();
             self.closeModal();
         });
@@ -85,10 +94,15 @@ class Game{
         clickListenter(item);
     })
 
-    function clickListenter(card){   
-        
+    function clickListenter(card){  
+     
         card.addEventListener('click',     function(){ 
-            
+
+            if(self.gameStart===0){
+                self.setTimer();
+                self.gameStart++;
+            }
+
             flip(this);
 
             if(isSame(this)){
@@ -100,8 +114,6 @@ class Game{
             else{     
                 addCardToOpened(this);
             }
-        
-            self.checkWin();
       console.log(openedCards);
     })
     }
@@ -127,8 +139,7 @@ class Game{
 
     function removeAllIfOpennedTwo(){
         openedCards.forEach(item=>flip(item));
-            //flip(openedCards[0]);
-            openedCards = [];
+        openedCards = [];
     }
 
     function removeCardfromOpened(card){
@@ -164,9 +175,7 @@ class Game{
         self.matchCards.push(match);
         console.log(self.matchCards);
     }
-
     }
-
 }
 
 
