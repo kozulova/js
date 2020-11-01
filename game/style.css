@@ -1,0 +1,122 @@
+body{
+    background-color: #cfd0cf;
+}
+h1{
+    font-family: Arial;
+    font-size: 42px;
+    line-height: 47px;
+    padding: 40px 0;
+    text-align: center;
+    color: #434344;
+}
+.flex-container{
+    width: 630px;
+    margin: 0 auto;
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 600px;
+}
+#list:nth-child(4n){
+    margin-right: 0px;
+}
+.card{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    border: 5px solid #fff;
+    margin: 0px 25px 25px 0px;
+    padding: 0px;
+    font-size: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 9px;
+    box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+    overflow: hidden;
+    transition: transform  1s, visibility 2s, display 2s ;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.card_face{
+    background-image: linear-gradient(to top right, #22AB93, #19668D );
+    width: 100%;
+    height: 100%;
+}
+.flipped{
+    transform: rotateY(180deg);
+}
+
+.flipped .card_back{
+    background-color: #fff;
+    background-image: none;
+    transform: rotateY(-180deg);
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+.card_back span{
+    display: inline-block;
+    height: 25px;
+    vertical-align: middle;
+    visibility: visible;
+}
+
+.flipped .card_face{
+    display: none;
+}
+#timer{
+    text-align: center;
+    font-size: 35px;
+    padding-top: 30px;
+}
+.match{
+    background-color: #5AD66F;
+}
+.miss{
+    background-color: #F44336;
+}
+#modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content{
+    padding: 30px 50px;
+    margin: 15% auto;
+    min-width: 350px;
+    width: 50%;
+    text-align: center;
+    background-color: #fff;
+}
+
+#modal button{
+    box-shadow: 1px 1px 1px;
+    background-image: linear-gradient(to top right, #22AB93, #19668D );
+    font-size: 20px;
+    color: #fff;
+    height: 60px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+#modal button:active{
+    box-shadow: 2px 1px 8px inset;
+    border: none;
+}
+button:focus{
+    outline: none;
+}
+h2{
+    font-size: 48px;
+    color: #434344
+}
