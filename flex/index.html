@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shortly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+       <header>
+           <div class="logo"><a>Shortly</a></div>
+           <div class="menu_btn" onclick="showMenu()" style="transform: rotate(90deg)">
+               |||
+           </div>
+           
+           <nav class="menu">           
+                   <li><a href="">Features</a></li>
+                   <li><a href="">Pricing</a></li>
+                   <li><a href="">Resources</a></li>              
+           </nav>
+           <nav class="login">
+               <ul>
+                   <li><a href="">Login</a></li>
+                   <li class="round_button"><a href="">Sign Up</a></li>         
+               </ul>
+           </nav>
+        </header>
+        <div class="mobile_menu" style="display: none">
+            <div class="main_mobile_menu">
+            <li><a href="">Features</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Resources</a></li> 
+            </div>
+            <li><a href="">Login</a></li>
+            <li><a href="">Sign Up</a></li>   
+        </div>
+        <section class="slider">
+            <div class="slider_text">
+            <h1>More than just shorter links</h1>
+            <h3>Build your brand's recongnition and get detailed insights on how your links are performing.</h3>
+            <div class="round_button"><a>Get Started</a></div>
+            </div>
+            <div class="slider_image">
+            <img src="./images/illustration-working.svg" alt="">
+            </div>
+        </section>
+    </div>
+    <div class="second_section">
+        <section class="url_form">
+            <form>
+            <div class="url_input">
+                <input type="text" placeholder="Shorten a link here">
+                <label for="">Please add a link</label>
+            </div>
+                <button>Shorten it!</button>
+            </form>
+            <div class="urls">
+                <ul>
+                    <li class="url_box">
+                        <div class="url_text">http://frontendmentor.io</div>
+                        <div class="url_shorten">http://rel.ink/k4Kyk</div>
+                        <button>Copy</button>
+                    </li>
+                    <li class="url_box">
+                        <div class="url_text">http://frontendmentor.io</div>
+                        <div class="url_shorten">http://rel.ink/k4Kyk</div>
+                        <button>Copy</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="statistics">
+                <h2>Advanced Statistics</h2>
+                <h5>Track how your links are erforming across the web</br> with our advanced statistic dashboard</h5>
+                <div class="blue_line"></div>
+                <div class="staistic_cards">
+                        <li class="statistic_card brand">
+                            <div class="card_img">
+                                <img src="./images/icon-brand-recognition.svg" alt="" >
+                            </div>     
+                            <h6>Brand Recognition</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, nobis.</p>
+                        </li>
+                        <li class="statistic_card records">
+                            <div class="card_img">
+                                <img src="./images/icon-detailed-records.svg" alt="" >
+                            </div>
+                            <h6>Brand Recognition</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, nobis.</p>
+                        </li>
+                        <li class="statistic_card customizeble">
+                            <div class="card_img">
+                                <img src="./images/icon-fully-customizable.svg" alt="" >
+                            </div>
+                            <h6>Brand Recognition</h6>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, nobis.</p>
+                        </li>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="boost_your_links">
+        <h2>Boost your links today</h2>
+        <button>Get Started</button>
+    </section>   
+    <footer>
+        <div class="footer_container">
+            <div class="footer_logo"><a>Shortly</a></div>
+
+            <div class="footer_menus">
+                <div class="footer_menu_section">
+                    <h4>Features</h4>
+                        <li><a href="">Link Shortening</a></li>
+                        <li><a href="">Branded links</a></li>
+                        <li><a href="">Analitics</a></li>
+                </div>
+                <div class="footer_menu_section">
+                    <h4>Resources</h4>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Developers</a></li>
+                        <li><a href="">Support</a></li>
+                </div>
+                <div class="footer_menu_section">
+                    <h4>Company</h4>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Our team</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">Contact</a></li>
+                </div>
+            </div>
+            <div class="socials">
+                    <li><a href=""><img src="./images/icon-facebook.svg" alt=""></a></li>                    
+                    <li><a href=""><img src="./images/icon-twitter.svg" alt=""></a></li>                    
+                    <li><a href=""><img src="./images/icon-pinterest.svg" alt=""></a></li>                    
+                    <li><a href=""><img src="./images/icon-instagram.svg" alt=""></a></li>                    
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showMenu(){
+            let menu = document.querySelector('.mobile_menu');
+            let menuIco = document.querySelector('.menu_btn');
+            if(menu.style.display === "none"){
+                menu.style.display = "flex";
+                menuIco.style.transform = "none";
+            }
+            else{
+                menu.style.display = "none";
+                menuIco.style.transform = "rotate(90deg)";
+            }
+            
+        }
+    </script>
+</body>
+</html>
